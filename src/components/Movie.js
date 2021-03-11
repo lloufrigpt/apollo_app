@@ -28,15 +28,15 @@ const Poster = styled.div`
     `;
 
 export default ({ id, bg, isLiked }) => {
-    const [toggleMovie] = useMutation(LIKE_MOVIE, {
+    const [toggleLikeMovie] = useMutation(LIKE_MOVIE, {
         variables: { id: parseInt(id), isLiked }
-});
+    });
     return (
         <Container>
         <Link to={`/${id}`}>
             <Poster bg={bg} />
         </Link>
-        <button onClick={toggleMovie}>{isLiked ? "Unlike" : "Like"}</button>
+        <button onClick={toggleLikeMovie}>{isLiked ? "Unlike" : "Like"}</button>
         </Container>
     );
 };
